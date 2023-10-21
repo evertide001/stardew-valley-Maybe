@@ -19,6 +19,7 @@ controller.down.onEvent(ControllerButtonEvent.Released, function () {
         . . . . . f f . . f f . . . . . 
         `)
     mySprite.setVelocity(mySprite.vx, 0)
+    animate = false
 })
 controller.right.onEvent(ControllerButtonEvent.Released, function () {
     animation.stopAnimation(animation.AnimationTypes.All, mySprite)
@@ -41,6 +42,7 @@ controller.right.onEvent(ControllerButtonEvent.Released, function () {
         . . . . . . . f f f . . . . . . 
         `)
     mySprite.setVelocity(0, mySprite.vy)
+    animate = false
 })
 controller.left.onEvent(ControllerButtonEvent.Released, function () {
     animation.stopAnimation(animation.AnimationTypes.All, mySprite)
@@ -63,6 +65,7 @@ controller.left.onEvent(ControllerButtonEvent.Released, function () {
         . . . . . . f f f . . . . . . . 
         `)
     mySprite.setVelocity(0, mySprite.vy)
+    animate = false
 })
 controller.up.onEvent(ControllerButtonEvent.Released, function () {
     animation.stopAnimation(animation.AnimationTypes.All, mySprite)
@@ -85,6 +88,7 @@ controller.up.onEvent(ControllerButtonEvent.Released, function () {
         . . . . . f f . . f f . . . . . 
         `)
     mySprite.setVelocity(mySprite.vx, 0)
+    animate = false
 })
 let animate = false
 let mySprite: Sprite = null
@@ -418,7 +422,7 @@ game.onUpdateInterval(100, function () {
         )
         animate = true
     }
-    if (0 == 0 && 0 == 0 && 0 == 0 && 0 == 0) {
+    if (controller.left.isPressed() == false && controller.up.isPressed() == false && controller.right.isPressed() == false && controller.right.isPressed() == false) {
         animate = false
     }
 })
