@@ -1,4 +1,4 @@
-?controller.down.onEvent(ControllerButtonEvent.Released, function () {
+controller.down.onEvent(ControllerButtonEvent.Released, function () {
     animation.stopAnimation(animation.AnimationTypes.All, mySprite)
     mySprite.setImage(img`
         . . . . . . f f f f . . . . . . 
